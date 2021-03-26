@@ -21,12 +21,12 @@
 .Company{
     transform: rotate(270deg);
     display:inline-block;
-    width: 840px;
-    height: 100px;
+    width: 841px;
+    height: 96px;
     background-color: #184d47;
     position: absolute;
-    left: 65px;
-    top: 380px;
+    left: 61px;
+    top: 381px;
     color: white;
     -webkit-text-stroke: 1px #000;
    
@@ -36,10 +36,11 @@
 
 .Main{
     display:inline-block;
-    width: 425px;
+    width: 424px;
     position: absolute;
-    left: 0.6%;
+    left: 0.89%;
     background-color: #f3f4ed;
+    height: 289px;
 }
 
 .SnsSection{
@@ -47,13 +48,36 @@
     top: 500px;
     text-align: center;
 }
+#github{
+    position: relative;
+    right: 15px;
+}
+#insta{
+    position: relative;
+    right: 20px;
+}
+#soundcloud{
+    position: relative;
+    right: 23px;
+    top: 3px;
+}
 #lhg{
     position: relative;
+    right: 14px;
     bottom: 13px;
+    color: #184d47;
 }
 
 #justin1228{
     position: relative;
     bottom: 7px;
-    right: 3px;
+    right: 15px;
+    color: #184d47;
+}
+
+#geunee{
+    position: relative;
+    bottom: 7px;
+    right: 14px;
+    color: #184d47; 
 }
