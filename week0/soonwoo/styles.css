@@ -1,0 +1,20 @@
+#name{
+    font-size: 30px; 
+    margin: 20px;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+.info{
+    margin: 20px;
+    padding: 10px;
+}
+
+.url{
+    font-size: 30px;
+     
+}
+
+#insta{
+    vertical-align: middle;
+}
