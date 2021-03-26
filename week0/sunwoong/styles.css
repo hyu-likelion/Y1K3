@@ -1,0 +1,68 @@
+.main {
+    max-width: 900px;
+    border: #626262 solid 1px;
+    border-radius: 5px;
+    padding: 50px 70px 40px 70px;
+    margin: 20px;
+}
+
+#title {
+    padding-bottom: 40px;
+}
+
+#title p {
+    padding: 0;
+    margin: 0;
+    font-size: 3.3em;
+    font-weight: 700;
+    line-height: 1.4em;
+}
+
+#content {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sub-title {
+    display: inline-block;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    vertical-align: top;
+}
+
+.sub-title p {
+    font-size: 2.2em;
+    font-weight: 300;
+    line-height: 1.4em;
+    margin: 0;
+}
+
+.contact {
+    display: inline-block;
+    padding-left: 60px;
+    color: black;
+    border-left: 5px solid black;
+}
+
+.contact img {
+    padding-bottom: 5px;
+    padding-right: 8px;
+    width: 30px;
+    vertical-align: middle;
+}
+
+.contact a {
+    text-decoration: none !important;
+    font-size: 1.4em;
+    font-weight: 300;
+    line-height: 2.2em;
+    color: black;
+}
+
+.box {
+    border: 1px solid black;
+    background-color: black;
+    width: 5px;
+    height: 100px;
+}
