@@ -1,20 +1,23 @@
-#name{
-    font-size: 30px; 
+#info{
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#subinfo{
     margin: 20px;
-    padding: 10px;
-    font-weight: bolder;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+#imgs{
+    margin:20px;
+    display:inline-block;
+    
+}   
 
-.info{
-    margin: 20px;
-    padding: 10px;
-}
-
-.url{
-    font-size: 30px;
-     
-}
-
-#insta{
+.logo{
     vertical-align: middle;
+}
+
+.class{
+    font: normal normal normal 40px/50px Arial;
+    color: #535353;
 }
