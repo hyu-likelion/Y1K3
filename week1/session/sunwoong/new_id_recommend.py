@@ -1,8 +1,6 @@
 import re
 
 def solution(new_id):
-    answer = ''
-
     # Step 0. id copy
     id = new_id
 
@@ -10,12 +8,13 @@ def solution(new_id):
     id = id.lower() 
 
     # Step 2. remove other characters
-    pattern = "[a-z0-9-_.~!@#$%^&*=+:?,\(\)\[\{\]\}\<\>\/]"
+    # -), 밑줄(_), 마침표(.)
+    # pattern = "[a-z0-9-_.~!@#$%^&*=+:?,\(\)\[\{\]\}\<\>\/]"
+    pattern = "[a-z0-9_.\-]"
     remove = list(re.sub(pattern, "", id))
     for i in remove:
         id = id.replace(i, "")
     
-    print(id)
     # Step3. 
     id = re.sub("[.]+", ".", id)
 
@@ -36,9 +35,9 @@ def solution(new_id):
     if len(id) <= 2:
         id += id[len(id)-1] * (3-len(id))
     
-    return answer
+    return id
 
 
-input = "...!@BaT#*..y.abcdefghijklm"
+input = "=.="
 print("input : " + input)
 print(solution(input))
