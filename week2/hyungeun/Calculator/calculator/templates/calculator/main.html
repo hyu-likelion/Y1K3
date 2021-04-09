@@ -44,7 +44,7 @@
     }
 
     input:focus {
-        outline: none;
+        outline: None;
     }
 
     #submit {
@@ -62,9 +62,9 @@
 <div id="container">
     <div id="title">Hello Django!</div>
     <form action="calculator" style="text-align: center;">
-        <input type="text" name="expression" id="">
+        <input type="text" name="expression" id="" placeholder="ex)9 + 1" onfocus="this.placeholder=''" onblur="this.placeholder='ex)9 + 1'">
         <br>
-        <input type="submit" value="submit">
+        <input id = "submit" type="submit" value="submit">
     </form>
 </div>
 
