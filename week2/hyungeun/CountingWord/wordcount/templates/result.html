@@ -1,0 +1,16 @@
+<div>
+    <h2>You type this sentences</h2>
+    <br>
+    <div>
+        {{sentences}}
+    </div>
+    <br>
+    <h2>Number of words is {{countWords}}</h2>
+    <br>
+    <h2>Number of each word you type is</h2>
+    <br>
+    {% for word, count in wordDict%}
+        {{word}} : {{count}}
+        <br>
+    {%endfor%}
+</div>
