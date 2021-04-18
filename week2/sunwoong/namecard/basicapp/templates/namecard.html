@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>Kim Sun Woong</title>
+
+</head>
+<body>
+
+    <div class="main">
+        <div id="title">
+            <p>KIM</p>
+            <p>SUN</p>
+            <p>WOONG</p>
+        </div>
+
+        <div id="content">
+            <div class="sub-title">
+                <p>Student</p>
+                <p>Hanyang Univ.</p>
+            </div>
+
+            <div class="contact">
+                <div>
+                    <img src="{% static 'email_circle.svg' %}">
+                    <a href="mailto:sunung007@naver.com" target="_blank">sunung007@naver.com</a>
+                </div>
+                <div>
+                    <img src="{% static 'tistory_circle.svg' %}">
+                    <a href="https://gofo-coding.tistory.com" target="_blank">https://gofo-coding.tistory.com</a>
+                </div>
+                <div>
+                    <img src="{% static 'github_circle.svg' %}">
+                    <a href="https://github.com/sunung007" target="_blank">https://github.com/sunung007</a>
+                </div>
+                <div>
+                    <img src="{% static 'facebook_circle.svg' %}">
+                    <a href="https://www.facebook.com/sunung007/" target="_blank">https://www.facebook.com/sunung007/</a>
+                </div>
+                <div>
+                    <img src="{% static 'instagram_circle_fill.svg' %}">
+                    <a href="https://www.instagram.com/sunung_1/" target="_blank">https://www.instagram.com/sunung_1/</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

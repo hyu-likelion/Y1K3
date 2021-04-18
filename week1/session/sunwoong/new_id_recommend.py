@@ -8,8 +8,6 @@ def solution(new_id):
     id = id.lower() 
 
     # Step 2. remove other characters
-    # -), 밑줄(_), 마침표(.)
-    # pattern = "[a-z0-9-_.~!@#$%^&*=+:?,\(\)\[\{\]\}\<\>\/]"
     pattern = "[a-z0-9_.\-]"
     remove = list(re.sub(pattern, "", id))
     for i in remove:
