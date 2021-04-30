@@ -1,0 +1,48 @@
+<style>
+    body {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .button {
+        display: inline-block;
+        text-align: center;
+        margin-top:10px;
+        padding: 6px 10px 6px 10px;
+        background: antiquewhite;
+        border: 1px solid #222;
+        border-radius: 5px;
+    }
+
+    .button > a {
+        color: coral;
+        font-weight: 700;
+        font-size: 1em;
+        text-decoration: none;
+    }
+
+    .reply .question {
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+    .reply .answer {
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div> 
+    <h1>설문이 완료되었습니다.</h1>
+</div>
+
+
+{% for r in reply %}
+<div class="reply">
+    <div class="question">{{ r | first }}</div>
+    <div class="answer">{{ r | last }}</div>
+</div>
+{% endfor %}
+
+<div class="button">
+    <a href="/">투표하기</a>
+</div>

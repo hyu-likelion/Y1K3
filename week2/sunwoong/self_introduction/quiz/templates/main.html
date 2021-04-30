@@ -1,0 +1,79 @@
+<style>
+    body {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    #list {
+        display: inline-block;
+        text-align: left;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #list > div {
+        margin-bottom: 5px;
+    }
+
+    .button {
+        display: inline-block;
+        text-align: center;
+        margin-bottom:10px;
+        padding: 6px 10px 6px 10px;
+        background: antiquewhite;
+        border: 1px solid #222;
+        border-radius: 5px;
+        color: coral;
+        font-weight: 700;
+        font-size: 1em;
+    }
+
+</style>
+
+
+<h1>Question {{ cnt }}.</h1>
+<h2>{{ question.question }}</h2>
+
+<form action="complete" onsubmit="return isChecked()">
+    <!-- {% csrf_token %} -->
+    <div id="list">
+        <div><input type="checkbox" name="reply" value="{{ question.selection1 }}">{{ question.selection1 }}</div>
+        <div><input type="checkbox" name="reply" value="{{ question.selection2 }}">{{ question.selection2 }}</div>
+        <div><input type="checkbox" name="reply" value="{{ question.selection3 }}">{{ question.selection3 }}</div>
+        <div><input type="checkbox" name="reply" value="{{ question.selection4 }}">{{ question.selection4 }}</div>
+        <div><input type="checkbox" name="reply" value="{{ question.selection5 }}">{{ question.selection5 }}</div>
+    </div>
+    <br>
+    <div>
+        {% if total_num == cnt %}
+            <div><input type="submit" class="button" value="제출하기"></div>
+        {% else %}
+            <div><input type="submit" class="button" value="다음"></div>
+        {% endif %}
+
+        <input type="button" class="button" value="문제목록" onclick="location.href='/admin/quiz/question/'">
+        <input type="button" class="button" value="문제추가" onclick="location.href='/admin/quiz/question/add/'">
+    </div>
+
+    <script>
+        function isChecked() {
+            let isChecked = 0
+
+            checkBoxes = document.getElementsByName("reply")
+            for(let checkBox of checkBoxes) {
+                if(checkBox.checked) isChecked++
+            }
+
+            if(isChecked == 1) {
+                return true
+            }
+            else if(isChecked == 0) {
+                alert("답을 체크하세요.")
+                return false
+            }
+            else {
+                alert("하나의 답만 체크하세요.")
+                return false
+            }
+        }
+    </script>
+</form>
