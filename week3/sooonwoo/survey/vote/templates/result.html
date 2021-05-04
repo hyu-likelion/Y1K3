@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <h1>설문조사 결과보기 예제</h1>
+        <div id = "list">
+            <div style="font-weight: bold;">응답</div> 
+            <br/>
+            {% for one in result %}
+                <div>{{ one.ans }}</div>
+            {% endfor %}
+            <br/>
+        </div>
+        <a href=" /"> 설문으로 돌아가기 </a>
+    </div>
+</body>
+</html>
