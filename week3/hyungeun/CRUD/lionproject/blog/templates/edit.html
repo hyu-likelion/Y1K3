@@ -1,0 +1,10 @@
+<h1>Edit your Post</h1>
+
+<form action="{%url 'update' edit_blog.id%}" method="post">
+    {%csrf_token%}
+    <p>제목: <input name = "title" type="text" value="{{edit_blog.title}}"></p>
+    <p>작성자: <input name = "writer" type="text" value="{{edit_blog.writer}}"></p>
+    본문:<br>
+    <textarea name="body" id="" cols="30" rows="10">{{edit_blog.body}}</textarea>
+    <button type="submit">submit</button>
+</form>
