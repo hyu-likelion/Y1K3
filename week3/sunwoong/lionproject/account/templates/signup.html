@@ -1,0 +1,16 @@
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+
+<h1>Sign Up!</h1>
+
+{%  block content %}
+<form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <button type="submit">submit</button>
+</form>
+{%  endblock %}
