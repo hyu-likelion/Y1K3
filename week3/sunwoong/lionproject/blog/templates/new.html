@@ -1,0 +1,15 @@
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+
+<h1>Writer Your Blog</h1>
+
+<form method="POST" action="{% url 'create' %}">
+    {% csrf_token %}
+    <div>제목 : <input type="text" name="title"></div>
+    <div>작성자 : <input type="text" name="writer"></div>
+    본문 : <textarea name="body" id="" cols="30" rows="10"></textarea>
+    <button type="submit">submit</button>
+</form>

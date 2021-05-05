@@ -1,0 +1,62 @@
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+
+<h1>Blog project</h1>
+
+{% if user.is_authenticated %}
+    <div>
+        안녕하세요. {{ user.nickname }}님!
+        <br>
+        위치 : {{ user.location }}
+        <br>
+        소속 : {{ user.university }}
+    </div>
+
+    <div>
+        <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'new' %}">write blog</a>
+    </div>
+
+    <div>
+        <a href="?search=true&writer={{ user.nickname }}">내가 쓴글 보기</a>
+    </div>
+
+    <div class="container">
+        {% for blog in blogs %}
+        <div>
+            <h3>{{ blog.title }}</h3>
+            {{ blog.writer }}
+            {{ blog.summary }} <!-- 요약 정보 -->
+            <a href="{% url 'detail' blog.id %}">...more</a>
+            <br>
+        </div>
+        {% endfor %}
+
+        <br>
+
+        <div>{{ blogs.number }} of {{ blogs.paginator.num_pages }}</div>
+        <div>
+            {% if blogs.has_previous %}
+                <a href="?page=1">처음</a>
+                <a href="?page={{ blogs.previous_page_number }}">이전</a>
+            {% endif %}
+
+
+            {% if blogs.has_next %}
+                <a href="?page={{ blogs.next_page_number }}">다음</a>
+                <a href="?page={{ blogs.paginator.num_pages }}">마지막</a>
+            {% endif %}
+        </div>
+    </div>
+
+{% else %}
+    <div>
+        <a href="{% url 'signup' %}">Signup</a>
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+{% endif %}
+
+
