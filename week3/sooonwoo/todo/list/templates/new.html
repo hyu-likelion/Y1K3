@@ -1,0 +1,7 @@
+<h1>Write Your List</h1>
+
+<form action="{%url 'create'%}" method="post">
+    {%csrf_token%}
+    본문:<textarea name="body" id="" cols="30" rows="10" placeholder="내용을 입력하세요"></textarea>
+    <button type="submit">submit</button>
+</form>
