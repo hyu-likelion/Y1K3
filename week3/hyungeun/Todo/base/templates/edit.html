@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+
+{%block content%}
+    {%if task%}
+        <form class="form-inline my-2 my-lg-0" method="POST">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="search" name="item" placeholder="{{task.item}}" value="{{task.item}}" aria-label="Search">
+            <input type="hidden" name="completed" value="task.completed">
+            <button type="submit">수정완료</button>
+        </form>
+    {%endif%}
+{%endblock%}
