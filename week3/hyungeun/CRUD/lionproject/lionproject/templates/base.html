@@ -20,19 +20,27 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href= " {%url 'login'%} ">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href= " {%url 'logout'%} ">Logout</a>
-              </li>
+              {%if not user.is_authenticated%}
+                <li class="nav-item">
+                  <a class="nav-link" href= " {%url 'login'%} ">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href= " {%url 'register'%} ">Sign Up</a>
+                </li>
+              {% endif %}
+              {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href= " {%url 'new'%} ">Write</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href= " {%url 'logout'%} ">Logout</a>
+                </li>
+              {% endif %}
+              
               <li class="nav-item dropdown">
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                 </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
               </li>
             </ul>
             <form class="d-flex">
