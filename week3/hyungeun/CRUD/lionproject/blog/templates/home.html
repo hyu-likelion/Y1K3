@@ -19,5 +19,16 @@
             </div>
         {%endfor%}
     </div>
+    {% if blogs.has_previous %}
+    <a href = "?page=1"> 처음 </a>
+    <a href = "?page={{blogs.previous_page_number}}"> 이전 </a>
+    {% endif %}
+    <span>{{blogs.number}}</span>
+    <span>of</span>
+    <span>{{blogs.paginator.num_pages}}</span>
+    {% if blogs.has_next %}
+    <a href = "?page={{blogs.next_page_number}}"> 다음 </a>
+    <a href = "?page={{blogs.paginator.num_pages}}"> 마지막 </a>
+    {% endif %}
 
 {% endblock %}
