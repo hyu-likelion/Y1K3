@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+{%if all_items%}
+    <br>
+    <br>
+    <table class="table table-bordered">
+        <tbody>
+        {%for task in all_items%}
+            {% if task.completed %}
+            <tr>
+                <td scope="row">
+                        <a href="{% url 'edit' task.id %}">{{task.item}}</a>
+                </td>
+                <td>
+                    <a href="{% url 'uncross' task.id %}">완료</a> 
+                </td>
+                <td>
+                    <a href="{% url 'delete' task.id %}">삭제</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr class = "table-secondary">
+                <td scope="row">
+                    <a href="{% url 'edit' task.id %}"><del>{{task.item}}</del></a>
+                </td>
+                <td>
+                    <a href="{% url 'cross' task.id %}">다시</a>
+                </td>
+                <td>
+                    <a href="{% url 'delete' task.id %}">삭제</a>
+                </td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+{%endif%}
+{%endblock%}
