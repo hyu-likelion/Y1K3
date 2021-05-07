@@ -1,0 +1,60 @@
+<style>
+    body {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .lists {
+        display: inline-block;
+    }
+    .list {
+        display: flex;
+        margin-bottom: 15px;
+        align-items: center;
+    }
+    .content {
+        padding-right: 20px;
+    }
+    .button {
+        color: black;
+        background: #ffb435;
+
+        border: 1px solid #222;
+        padding: 5px;
+        text-decoration: none;
+        font-size: .8em;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+    .input input {
+        padding: 5px;
+        margin-right: 10px;
+    }
+    .input label {
+        display: none;
+    }
+    .form {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<h1>To do list</h1>
+
+{%  block content %}
+    <div class="lists">
+        {% for todo in todos %}
+            <div class="list">
+                <li class="content">{{ todo.work }}</li>
+                <a class="button" href="{% url 'update' todo.id %}">수정</a>
+                <a class="button" href="{% url 'delete' todo.id %}">삭제</a>
+            </div>
+        {% endfor %}
+    </div>
+
+<form class="form" method="post" action="{% url 'main' %}">
+    {% csrf_token %}
+    <div class="input">{{ form.as_p }}</div>
+    <button class="button" type="submit">추가하기</button>
+</form>
+{% endblock %}

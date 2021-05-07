@@ -1,0 +1,30 @@
+<style>
+    body {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 1em;
+    }
+    .button {
+        border: 1px solid #222;
+        padding: 5px;
+        text-decoration: none;
+        color: black;
+        margin-right: 10px;
+        border-radius: 5px;
+        background: #dddddd;
+        font-size: 1em;
+    }
+    .input {
+        margin-top: 20px;
+        padding: 5px;
+        font-size: 1em;
+    }
+</style>
+<h1>'{{ todo.work }}' 수정하기</h1>
+<div class="subtitle">수정할 내용을 입력하세요</div>
+
+<form method="post" action="{% url 'update' todo.id %}">
+    {% csrf_token %}
+    <input class="input" type="text" name="work" placeholder="수정할 내용을 입력하세요." value="{{ todo.work }}">
+    <button class="button" type="submit">수정하기</button>
+</form>
