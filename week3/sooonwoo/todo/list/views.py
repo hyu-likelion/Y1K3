@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from list.models import Todo
+from list.forms import CreateTodo
 # Create your views here.
 
 def home(request):
@@ -15,7 +16,9 @@ def detail(request, id):
     return render(request,'detail.html',{'list':detail_list})
 
 def new(request):
-    return render(request,'new.html')
+    form = CreateTodo()
+
+    return render(request,'new.html',{'form':form})
 
 def create(request):
     new_list = Todo()
