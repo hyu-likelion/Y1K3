@@ -1,7 +1,0 @@
-<h1>Update Your List</h1>
-
-<form action="{%url 'update' list.id%}" method="post">    
-    {%csrf_token%}
-    본문: <textarea name="body" id="" cols="30" rows="10">{{list.body}}</textarea>
-    <button type="submit">submit</button>
-</form>
