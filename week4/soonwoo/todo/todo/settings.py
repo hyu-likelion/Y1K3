@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-b12h)j$mjr95qnf-tm3*j=__1^ka^k%h4*3ytd#xp)&t8iyy+u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -124,3 +124,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = 'AKIA2LURVKPENBUQKUP2'
+AWS_SECRET_ACCESS_KEY ='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'
+AWS_STORAGE_BUCKET_NAME = 'like-lion-soonu'
