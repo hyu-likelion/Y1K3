@@ -27,7 +27,8 @@ SECRET_KEY = 'c#*i@277)lvch2rxdvb$54ef0ft+ghsa-0!7%&wrdai1ed86)9'
 DEBUG = True
 
 ALLOWED_HOSTS = ['15.165.158.50',
-			  'ec2-15-165-158-50.ap-northeast-2.compute.amazonaws.com']
+                 'ec2-15-165-158-50.ap-northeast-2.compute.amazonaws.com',
+                 '127.0.0.1']
 
 # 회원가입 시에 user model로 사용할 것 지정
 AUTH_USER_MODEL = 'account.CustomUser'
